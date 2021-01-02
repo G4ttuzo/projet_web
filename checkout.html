@@ -1,0 +1,78 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Shoes Shop chekout</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+
+<!-- start menu -->     
+<link href="css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="js/megamenu.js"></script>
+<script src="js/store.js" ></script>
+<!-- end menu -->
+<!-- top scrolling -->
+</head>
+<body>
+	<div class="header-top">
+		<div class="wrap">
+			<div class="logo">
+				<a href="index.html"><img src="images/logo.png" alt="" /></a>
+			</div>
+			<div class="cssmenu">
+				<ul>
+					<li class="active"><a href="register.html">Sign up</a></li>
+					<li><a href="login.html">My Account</a></li>
+					<li><a href="checkout.html">CheckOut</a></li>
+				</ul>
+			</div>
+			<br><br>
+		</div>
+	</div>
+	<div class="header-bottom">
+		<div class="wrap">
+			<!-- start header menu -->
+			<ul class="megamenu skyblue">
+				<li><a class="color1" href="index.html">Home</a></li>
+				<li class="grid"><a class="color2" href="shop.html">Men</a></li>
+				<li class="active grid"><a class="color4" href="shop.html">Women</a></li>
+				<li><a class="color5" href="shop.html">Kids</a></li>
+			</ul>
+		</div>
+	</div>
+	<section class="container content-section">
+		<h2 class="section-header">CART</h2>
+		<div class="cart-row">
+			<span class="cart-item cart-header cart-column">ITEM</span>
+			<span class="cart-price cart-header cart-column">PRICE</span>
+			<span class="cart-quantity cart-header cart-column">QUANTITY</span>
+		</div>
+		<div class="cart-items">
+		</div>
+		<div class="cart-total">
+			<strong class="cart-total-title">Total</strong>
+			<span class="cart-total-price">0 DT</span>
+		</div>
+		<button class="btn btn-primary btn-purchase"style="width:auto;padding:1%"  type="button"onclick="window.localStorage.clear();" >PURCHASE</button>
+	</section>
+       <div class="login">
+         <div class="wrap" style="text-align: center;">
+    	     <p class="cart">Click<a href="shop.html"> here</a> to continue shopping</p>
+    	   </div>
+		</div>
+        <div class="footer">
+			<div class="copy">
+				<div class="wrap">
+					<p>© All rights reserved </p>
+				</div>
+			</div>
+		</div> 
+		<script>
+			for(let i=0;i<JSON.parse(JSON.parse(localStorage.getItem("objj")).length);i++){
+				addItemToCart(JSON.parse(JSON.parse(localStorage.getItem("objj"))[i]).name, JSON.parse(JSON.parse(localStorage.getItem("objj"))[i]).price, JSON.parse(JSON.parse(localStorage.getItem("objj"))[i]).picture)
+			}
+
+		</script>   
+</body>
+</html>
